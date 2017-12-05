@@ -93,7 +93,10 @@ univ_regr_rsid_std = np.std(univ_regr_rsid, axis=0) * np.sqrt(12)
 univ_norm_size_expr = factor_size_norm.loc[DATE]
 univ_norm_valu_expr = factor_valu_norm.loc[DATE]
 univ_norm_mntm_expr = factor_mntm_norm.loc[DATE]
-univ_norm_factor_expr = np.array(pd.concat([univ_norm_size_expr, univ_norm_valu_expr, univ_norm_mntm_expr], axis=1))
+univ_norm_factor_expr = np.array(pd.concat([univ_norm_size_expr, 
+                                            univ_norm_valu_expr, 
+                                            univ_norm_mntm_expr], 
+                                            axis=1))
 
 # Factor, specific, and total risk
 univ_factor_risk = np.dot(np.dot(univ_norm_factor_expr, univ_factor_covar), univ_norm_factor_expr.T)
@@ -109,20 +112,23 @@ port_factor_risk_total = np.sqrt(np.dot(np.dot(port.T, univ_factor_risk), port))
 port_specific_risk_total = np.sqrt(np.dot(np.dot(port.T, univ_specific_risk), port))
 port_total_risk_total = np.sqrt(np.dot(np.dot(port.T, univ_total_risk), port))
 
-# margnlinal risk
-port_factor_risk_margnl = np.dot(univ_factor_risk, port) / port_factor_risk_total / 100
-port_specific_risk_margnl = np.dot(univ_specific_risk, port) / port_specific_risk_total / 100
-port_total_risk_margnl = np.dot(univ_total_risk, port) / port_total_risk_total / 100
+# marginalinal risk
+port_factor_risk_marginal = np.dot(univ_factor_risk, port) / port_factor_risk_total / 100
+port_specific_risk_marginal = np.dot(univ_specific_risk, port) / port_specific_risk_total / 100
+port_total_risk_marginal = np.dot(univ_total_risk, port) / port_total_risk_total / 100
 
 # Contribution to risk
-port_factor_risk_contrib = port * port_factor_risk_margnl * 100
-port_specific_risk_contrib = port * port_specific_risk_margnl * 100
-port_total_risk_contrib = port * port_total_risk_margnl * 100
+port_factor_risk_contrib = port * port_factor_risk_marginal * 100
+port_specific_risk_contrib = port * port_specific_risk_marginal * 100
+port_total_risk_contrib = port * port_total_risk_marginal * 100
 
 # Percent contribution to total risk
-port_factor_risk_pct_contrib = (port_factor_risk_total**2 / port_total_risk_total**2) * port_factor_risk_contrib / np.sum(port_factor_risk_contrib)
-port_specific_risk_pct_contrib = (port_specific_risk_total**2 / port_total_risk_total**2) * port_specific_risk_contrib / np.sum(port_specific_risk_contrib)
-port_total_risk_pct_contrib = (port_total_risk_total**2 / port_total_risk_total**2) * port_total_risk_contrib / np.sum(port_total_risk_contrib)
+port_factor_risk_pct_contrib = ((port_factor_risk_total**2 / port_total_risk_total**2) * 
+                                port_factor_risk_contrib / np.sum(port_factor_risk_contrib))
+port_specific_risk_pct_contrib = ((port_specific_risk_total**2 / port_total_risk_total**2) * 
+                                  port_specific_risk_contrib / np.sum(port_specific_risk_contrib))
+port_total_risk_pct_contrib = ((port_total_risk_total**2 / port_total_risk_total**2) * 
+                               port_total_risk_contrib / np.sum(port_total_risk_contrib))
 
 #==============================================================================
 # Benchmark Risk
@@ -133,20 +139,23 @@ bench_factor_risk_total = np.sqrt(np.dot(np.dot(bench.T, univ_factor_risk), benc
 bench_specific_risk_total = np.sqrt(np.dot(np.dot(bench.T, univ_specific_risk), bench))
 bench_total_risk_total = np.sqrt(np.dot(np.dot(bench.T, univ_total_risk), bench))
 
-# margnlinal risk
-bench_factor_risk_margnl = np.dot(univ_factor_risk, bench) / bench_factor_risk_total / 100
-bench_specific_risk_margnl = np.dot(univ_specific_risk, bench) / bench_specific_risk_total / 100
-bench_total_risk_margnl = np.dot(univ_total_risk, bench) / bench_total_risk_total / 100
+# marginalinal risk
+bench_factor_risk_marginal = np.dot(univ_factor_risk, bench) / bench_factor_risk_total / 100
+bench_specific_risk_marginal = np.dot(univ_specific_risk, bench) / bench_specific_risk_total / 100
+bench_total_risk_marginal = np.dot(univ_total_risk, bench) / bench_total_risk_total / 100
 
 # Contribution to risk
-bench_factor_risk_contrib = bench * bench_factor_risk_margnl * 100
-bench_specific_risk_contrib = bench * bench_specific_risk_margnl * 100
-bench_total_risk_contrib = bench * bench_total_risk_margnl * 100
+bench_factor_risk_contrib = bench * bench_factor_risk_marginal * 100
+bench_specific_risk_contrib = bench * bench_specific_risk_marginal * 100
+bench_total_risk_contrib = bench * bench_total_risk_marginal * 100
 
 # Percent contribution to total risk
-bench_factor_risk_pct_contrib = (bench_factor_risk_total**2 / bench_total_risk_total**2) * bench_factor_risk_contrib / np.sum(bench_factor_risk_contrib)
-bench_specific_risk_pct_contrib = (bench_specific_risk_total**2 / bench_total_risk_total**2) * bench_specific_risk_contrib / np.sum(bench_specific_risk_contrib)
-bench_total_risk_pct_contrib = (bench_total_risk_total**2 / bench_total_risk_total**2) * bench_total_risk_contrib / np.sum(bench_total_risk_contrib)
+bench_factor_risk_pct_contrib = ((bench_factor_risk_total**2 / bench_total_risk_total**2) * 
+                                 bench_factor_risk_contrib / np.sum(bench_factor_risk_contrib))
+bench_specific_risk_pct_contrib = ((bench_specific_risk_total**2 / bench_total_risk_total**2) * 
+                                   bench_specific_risk_contrib / np.sum(bench_specific_risk_contrib))
+bench_total_risk_pct_contrib = ((bench_total_risk_total**2 / bench_total_risk_total**2) * 
+                                bench_total_risk_contrib / np.sum(bench_total_risk_contrib))
 
 #==============================================================================
 # Active Risk
@@ -157,20 +166,23 @@ active_factor_risk_total = np.sqrt(np.dot(np.dot(active.T, univ_factor_risk), ac
 active_specific_risk_total = np.sqrt(np.dot(np.dot(active.T, univ_specific_risk), active))
 active_total_risk_total = np.sqrt(np.dot(np.dot(active.T, univ_total_risk), active))
 
-# margnlinal risk
-active_factor_risk_margnl = np.dot(univ_factor_risk, active) / active_factor_risk_total / 100
-active_specific_risk_margnl = np.dot(univ_specific_risk, active) / active_specific_risk_total / 100
-active_total_risk_margnl = np.dot(univ_total_risk, active) / active_total_risk_total / 100
+# marginalinal risk
+active_factor_risk_marginal = np.dot(univ_factor_risk, active) / active_factor_risk_total / 100
+active_specific_risk_marginal = np.dot(univ_specific_risk, active) / active_specific_risk_total / 100
+active_total_risk_marginal = np.dot(univ_total_risk, active) / active_total_risk_total / 100
 
 # Contribution to risk
-active_factor_risk_contrib = active * active_factor_risk_margnl * 100
-active_specific_risk_contrib = active * active_specific_risk_margnl * 100
-active_total_risk_contrib = active * active_total_risk_margnl * 100
+active_factor_risk_contrib = active * active_factor_risk_marginal * 100
+active_specific_risk_contrib = active * active_specific_risk_marginal * 100
+active_total_risk_contrib = active * active_total_risk_marginal * 100
 
 # Percent contribution to total risk
-active_factor_risk_pct_contrib = (active_factor_risk_total**2 / active_total_risk_total**2) * active_factor_risk_contrib / np.sum(active_factor_risk_contrib)
-active_specific_risk_pct_contrib = (active_specific_risk_total**2 / active_total_risk_total**2) * active_specific_risk_contrib / np.sum(active_specific_risk_contrib)
-active_total_risk_pct_contrib = (active_total_risk_total**2 / active_total_risk_total**2) * active_total_risk_contrib / np.sum(active_total_risk_contrib)
+active_factor_risk_pct_contrib = ((active_factor_risk_total**2 / active_total_risk_total**2) * 
+                                  active_factor_risk_contrib / np.sum(active_factor_risk_contrib))
+active_specific_risk_pct_contrib = ((active_specific_risk_total**2 / active_total_risk_total**2) * 
+                                    active_specific_risk_contrib / np.sum(active_specific_risk_contrib))
+active_total_risk_pct_contrib = ((active_total_risk_total**2 / active_total_risk_total**2) * 
+                                 active_total_risk_contrib / np.sum(active_total_risk_contrib))
 
 #==============================================================================
 # Factor risk decomposition
@@ -182,16 +194,16 @@ bench_factor_expr = np.dot(bench.T, univ_norm_factor_expr)
 active_factor_expr = np.dot(active.T, univ_norm_factor_expr)
 
 # Factor Risk Decomposition
-port_factor_decomp_margnl = np.dot(univ_factor_covar, port_factor_expr.T) / port_factor_risk_total / 100
-port_factor_decomp_contrib = port_factor_expr.T * port_factor_decomp_margnl * 100
+port_factor_decomp_marginal = np.dot(univ_factor_covar, port_factor_expr.T) / port_factor_risk_total / 100
+port_factor_decomp_contrib = port_factor_expr.T * port_factor_decomp_marginal * 100
 port_factor_decomp_pct_contrib = port_factor_decomp_contrib / port_factor_risk_total
 
-bench_factor_decomp_margnl = np.dot(univ_factor_covar, bench_factor_expr.T) / bench_factor_risk_total / 100
-bench_factor_decomp_contrib = bench_factor_expr.T * bench_factor_decomp_margnl * 100
+bench_factor_decomp_marginal = np.dot(univ_factor_covar, bench_factor_expr.T) / bench_factor_risk_total / 100
+bench_factor_decomp_contrib = bench_factor_expr.T * bench_factor_decomp_marginal * 100
 bench_factor_decomp_pct_contrib = bench_factor_decomp_contrib / bench_factor_risk_total
 
-active_factor_decomp_margnl = np.dot(univ_factor_covar, active_factor_expr.T) / active_factor_risk_total / 100
-active_factor_decomp_contrib = active_factor_expr.T * active_factor_decomp_margnl * 100
+active_factor_decomp_marginal = np.dot(univ_factor_covar, active_factor_expr.T) / active_factor_risk_total / 100
+active_factor_decomp_contrib = active_factor_expr.T * active_factor_decomp_marginal * 100
 active_factor_decomp_pct_contrib = active_factor_decomp_contrib / active_factor_risk_total
 
 #==============================================================================
