@@ -90,16 +90,16 @@ univ_factor_corr = np.corrcoef(univ_regr_beta.T)
 univ_regr_rsid_std = np.std(univ_regr_rsid, axis=0) * np.sqrt(12)
 
 # Factor exposures
-univ_norm_size_expr = factor_size_norm.loc[DATE]
-univ_norm_valu_expr = factor_valu_norm.loc[DATE]
-univ_norm_mntm_expr = factor_mntm_norm.loc[DATE]
-univ_norm_factor_expr = np.array(pd.concat([univ_norm_size_expr, 
-                                            univ_norm_valu_expr, 
-                                            univ_norm_mntm_expr], 
+univ_norm_size_exposure = factor_size_norm.loc[DATE]
+univ_norm_valu_exposure = factor_valu_norm.loc[DATE]
+univ_norm_mntm_exposure = factor_mntm_norm.loc[DATE]
+univ_norm_factor_exposure = np.array(pd.concat([univ_norm_size_exposure, 
+                                            univ_norm_valu_exposure, 
+                                            univ_norm_mntm_exposure], 
                                             axis=1))
 
 # Factor, specific, and total risk
-univ_factor_risk = np.dot(np.dot(univ_norm_factor_expr, univ_factor_covar), univ_norm_factor_expr.T)
+univ_factor_risk = np.dot(np.dot(univ_norm_factor_exposure, univ_factor_covar), univ_norm_factor_exposure.T)
 univ_specific_risk = np.diag(univ_regr_rsid_std**2)
 univ_total_risk = univ_factor_risk + univ_specific_risk
 
@@ -189,21 +189,21 @@ active_total_risk_pct_contrib = ((active_total_risk_total**2 / active_total_risk
 #==============================================================================
 
 # Security Factor Exposures
-port_factor_expr = np.dot(port.T, univ_norm_factor_expr)
-bench_factor_expr = np.dot(bench.T, univ_norm_factor_expr)
-active_factor_expr = np.dot(active.T, univ_norm_factor_expr)
+port_factor_exposure = np.dot(port.T, univ_norm_factor_exposure)
+bench_factor_exposure = np.dot(bench.T, univ_norm_factor_exposure)
+active_factor_exposure = np.dot(active.T, univ_norm_factor_exposure)
 
 # Factor Risk Decomposition
-port_factor_decomp_marginal = np.dot(univ_factor_covar, port_factor_expr.T) / port_factor_risk_total / 100
-port_factor_decomp_contrib = port_factor_expr.T * port_factor_decomp_marginal * 100
+port_factor_decomp_marginal = np.dot(univ_factor_covar, port_factor_exposure.T) / port_factor_risk_total / 100
+port_factor_decomp_contrib = port_factor_exposure.T * port_factor_decomp_marginal * 100
 port_factor_decomp_pct_contrib = port_factor_decomp_contrib / port_factor_risk_total
 
-bench_factor_decomp_marginal = np.dot(univ_factor_covar, bench_factor_expr.T) / bench_factor_risk_total / 100
-bench_factor_decomp_contrib = bench_factor_expr.T * bench_factor_decomp_marginal * 100
+bench_factor_decomp_marginal = np.dot(univ_factor_covar, bench_factor_exposure.T) / bench_factor_risk_total / 100
+bench_factor_decomp_contrib = bench_factor_exposure.T * bench_factor_decomp_marginal * 100
 bench_factor_decomp_pct_contrib = bench_factor_decomp_contrib / bench_factor_risk_total
 
-active_factor_decomp_marginal = np.dot(univ_factor_covar, active_factor_expr.T) / active_factor_risk_total / 100
-active_factor_decomp_contrib = active_factor_expr.T * active_factor_decomp_marginal * 100
+active_factor_decomp_marginal = np.dot(univ_factor_covar, active_factor_exposure.T) / active_factor_risk_total / 100
+active_factor_decomp_contrib = active_factor_exposure.T * active_factor_decomp_marginal * 100
 active_factor_decomp_pct_contrib = active_factor_decomp_contrib / active_factor_risk_total
 
 #==============================================================================
