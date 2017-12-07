@@ -46,7 +46,7 @@ eps = pd.read_csv(EPS_FILE, header=0, index_col='DATE', parse_dates=['DATE'])
 #       3. Scaling: The values are normalized
 #       4. Note: Earnings is lagged by two months to account for delay in earnings data
 #
-# mntm: 1. Factor: Price momentum
+# mntm: 1. Factor: Momentum
 # ====  2. Definition: Price change from 12 months ago to 1 month ago 
 #       3. Scaling: The values are normalized
 
@@ -74,7 +74,7 @@ stack.sort_index(inplace=True)
 # Regression analysis
 #==============================================================================
 
-betas = [] # Factor betas
+betas = [] # Betas
 preds = [] # Predictions
 resid = [] # Residuals
 
@@ -144,17 +144,17 @@ bench_factor_risk_total = np.sqrt(np.dot(np.dot(bench.T, factor_risk), bench))
 bench_specific_risk_total = np.sqrt(np.dot(np.dot(bench.T, specific_risk), bench))
 bench_total_risk_total = np.sqrt(np.dot(np.dot(bench.T, total_risk), bench))
 
-# Marginal risk
+# Marginal risk (stock-level)
 bench_factor_risk_marginal = np.dot(factor_risk, bench) / bench_factor_risk_total / 100
 bench_specific_risk_marginal = np.dot(specific_risk, bench) / bench_specific_risk_total / 100
 bench_total_risk_marginal = np.dot(total_risk, bench) / bench_total_risk_total / 100
 
-# Contribution to risk
+# Contribution to risk (stock-level)
 bench_factor_risk_contrib = bench * bench_factor_risk_marginal * 100
 bench_specific_risk_contrib = bench * bench_specific_risk_marginal * 100
 bench_total_risk_contrib = bench * bench_total_risk_marginal * 100
 
-# Percent contribution to risk
+# Percent contribution to risk (stock-level)
 bench_factor_risk_pct_contrib = ((bench_factor_risk_total**2 / bench_total_risk_total**2) * 
                                  bench_factor_risk_contrib / np.sum(bench_factor_risk_contrib))
 bench_specific_risk_pct_contrib = ((bench_specific_risk_total**2 / bench_total_risk_total**2) * 
@@ -193,7 +193,7 @@ active_total_risk_pct_contrib = ((active_total_risk_total**2 / active_total_risk
 # Factor risk decomposition
 #==============================================================================
 
-# Security factor exposures
+# Factor exposures
 port_factor_exposure = np.dot(port.T, factor_exposure)
 bench_factor_exposure = np.dot(bench.T, factor_exposure)
 active_factor_exposure = np.dot(active.T, factor_exposure)
