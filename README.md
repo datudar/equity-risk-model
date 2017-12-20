@@ -10,13 +10,13 @@ Note: This model is purely for instructional purposes only. For the United State
 
 The three factors in this risk model are size, value, and momentum, and they are defined as follows:
 
-1. The **size** factor is defined as the natural log of the market cap
-2. The **value** factor is defined as the trailing 12-month earnings yield
-3. The **momentum** factor is defined as price change from 12 months ago to 1 month ago
+1. **Size** is defined as the natural log of the market cap
+2. **Value** is defined as the trailing 12-month earnings yield
+3. **Momentum** is defined as price change from 12 months ago to 1 month ago
 
 ### How It Works
 
-First, enter the weights of your portfolio and benchmark in their respective CSV files. Then, instantiate the portfolio, benchmark, and active portfolios as RiskModel objects:
+First, enter the weights of your portfolio and benchmark in their respective CSV files. Then, assign the portfolio, benchmark, and active portfolios as RiskModel objects:
 
 ```
 p = RiskModel(port)
@@ -32,34 +32,29 @@ The total risk of a portfolio, benchmark, or active portfolio is defined as the 
 2. Contribution to risk
 3. Percent contribution to risk
 
-To return a risk calculation, you have to call its method. For example, the total factor risk of the portfolio is called as:
+To return a risk calculation, you have to call its method.
 
+For example, the total factor risk of the portfolio, p, is called as:
 ```
 p.factor_risk_total()
 ```
 
 These are all the methods that are currently available:
-
 - factor_risk_total
 - specific_risk_total
 - total_risk_total
-
 - factor_risk_marginal
 - specific_risk_marginal
 - total_risk_marginal
-
 - factor_risk_contrib
 - specific_risk_contrib
 - total_risk_contrib
-
 - factor_risk_pct_contrib
 - specific_risk_pct_contrib
 - total_risk_pct_contrib
-
 - factor_decomp_marginal
 - factor_decomp_contrib
 - factor_decomp_pct_contrib
-
 
 ### License
 
