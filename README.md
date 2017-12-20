@@ -26,24 +26,21 @@ b = RiskModel(benchmark)
 ```
 a = RiskModel(active)
 ```
+4. Calculate a risk measure by executing that portfolio's respective method. For example, the total factor risk of the active portfolio, **a**, is called as:
+
+```
+a.factor_risk_total()
+```
 
 ### Risk Analysis
 
-The total risk of the portfolio, benchmark, or active portfolio is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the stock-level and factor-level. And, for each level, we calculate the following three risk measures:
+The total risk is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the stock-level and factor-level. And, for each level, we calculate the following three risk measures:
 
 - Marginal contribution to risk
 - Contribution to risk
 - Percent contribution to risk
 
-To calculate a risk measure, you call its respective method. For example, the total factor risk of the portfolio, p, is called as:
-
-```
-p.factor_risk_total()
-```
-
-### Risk Metrics
-
-The following methods are currently available:
+These measures are available as methods on the portfolio, benchmark, and active portfolios.
 
 **Portfolio-level**
 
