@@ -24,6 +24,7 @@ EPS_FILE  = '{0}/eps.csv'.format(DIR) # Earnings per share (EPS) file
 # Portfolio, benchmark, and active risks
 #==============================================================================
 
+# Class that performs all risk model calculations
 class RiskModel():
     
     def __init__(self, port):
