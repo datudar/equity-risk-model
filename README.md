@@ -41,16 +41,18 @@ To return a risk calculation, you call its respective method. For example, the t
 p.factor_risk_total()
 ```
 
-The following methods are currently available:
+The following methods are currently available at the portfolio level:
 
 | # | Name | Method | Level | Definition |
-| :---: | :--- | :--- | :--- | :---  |
+| :---: | :--- | :--- | :--- | :--- |
 |1| Total Factor Risk | factor_risk_total | Portfolio | Factor risk of the portfolio|
 |2| Total Specific Risk | specific_risk_total | Portfolio | Specific risk of the portfolio|
 |3| Total Risk | total_risk_total | Portfolio | Total risk of the portfolio|
 
+The following methods are currently available at the stock level:
+
 | # | Name | Method | Level | Definition |
-| :---: | :--- | :--- | :---  |
+| :---: | :--- | :--- | :--- | :--- |
 |1| Marginal Factor Risk | factor_risk_marginal | Stock | Marginal factor risk|
 |2| Marginal Specific Risk | specific_risk_marginal | Stock | Marginal specific risk|
 |3| Marginal Total Risk | total_risk_marginal | Stock | Marginal total risk|
