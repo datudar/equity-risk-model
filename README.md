@@ -1,10 +1,10 @@
 ## Equity Risk Model
 
-This is a fundamentally-based equity [risk model](/equity_risk_model.py) that performs factor risk decomposition and single stock risk attribution. 
+This is a fundamentally-based [equity risk model](/equity_risk_model.py) that performs factor risk decomposition and single stock risk attribution. 
 
-We assume that only three risk factors are relevant (size, value, momentum) and that only ten securities are in our universe (AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM).
+We assume that only three risk factors (Size, Value, Momentum) are relevant and that only ten securities (AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM) are in our universe .
 
-*Note: This model is a drastic oversimplification of equity risk and is intended purely for instructional purposes only. For the United States market, a more realistic model would include several more factors and thousands of securities.*
+*Note: This model is a drastic oversimplification of equity risk and is intended purely for instructional purposes only. For the United States market, a more realistic model would typically include several more risk factors and thousands of securities.*
 
 The three factors in this model are:
 
@@ -15,7 +15,7 @@ The three factors in this model are:
 ### How It Works
 
 1. Enter the weights of the portfolio and benchmark in their respective CSV files.
-2. Run the [risk model](/equity_risk_model.py).
+2. Run the [equity risk model](/equity_risk_model.py).
 3. Assign the **portfolio**, **benchmark**, and **active** portfolios as **RiskModel** objects, **p**, **b**, and **a**, respectively:
 ```
 p = RiskModel(portfolio)
@@ -29,13 +29,13 @@ a = RiskModel(active)
 
 ### Risk Analysis
 
-The total risk of the portfolio, benchmark, or active portfolio is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the factor-level and stock-level. And, for each level, we calculate the following three risk metrics:
+The total risk of the portfolio, benchmark, or active portfolio is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the stock-level and factor-level. And, for each level, we calculate the following three risk measures:
 
 - Marginal contribution to risk
 - Contribution to risk
 - Percent contribution to risk
 
-To return a risk calculation, you call its respective method. For example, the total factor risk of the portfolio, p, is called as:
+To calculate a risk measure, you call its respective method. For example, the total factor risk of the portfolio, p, is called as:
 
 ```
 p.factor_risk_total()
