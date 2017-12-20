@@ -43,15 +43,23 @@ p.factor_risk_total()
 
 The following methods are currently available:
 
+| # | Name | Method | Level | Definition |
+| :---: | :--- | :--- | :---  |
+|1| Total Factor Risk | factor_risk_total | Portfolio | Factor risk of the portfolio|
+|2| Total Specific Risk | specific_risk_total | Portfolio | Specific risk of the portfolio|
+|3| Total Risk | total_risk_total | Portfolio | Total risk of the portfolio|
 
-| # | Name | Method | Definition |
-| :---: | :--- | :---: | :---  |
-|1| Total Factor Risk | factor_risk_total | Portfolio-level factor risk|
-|2| Total Specific Risk | specific_risk_total | Portfolio-level specific risk|
-|3| Total Risk | total_risk_total | Portfolio-level total risk|
-
-**Portfolio-level Risk Metrics**
-- factor_risk_total, specific_risk_total, total_risk_total
+| # | Name | Method | Level | Definition |
+| :---: | :--- | :--- | :---  |
+|1| Marginal Factor Risk | factor_risk_marginal | Stock | Marginal factor risk|
+|2| Marginal Specific Risk | specific_risk_marginal | Stock | Marginal specific risk|
+|3| Marginal Total Risk | total_risk_marginal | Stock | Marginal total risk|
+|4| Contribution to Factor Risk | factor_risk_contrib | Stock | Contribution to factor risk|
+|5| Contribution to Specific Risk | specific_risk_contrib | Stock | Contribution to specific risk|
+|6| Contribution to Total Risk | total_risk_contrib | Stock | Contribution to total risk|
+|7| Percent Contribution to Factor Risk | factor_risk_pct_contrib | Stock | Percent contribution to factor risk|
+|8| Percent Contribution to Specific Risk | specific_risk_pct_contrib | Stock | Percent contribution to specific risk|
+|9| Percent Contribution to Total Risk | total_risk_pct_contrib | Stock | Percent contribution to total risk|
 
 **Stock-level Risk Metrics**
 - factor_risk_marginal, specific_risk_marginal, total_risk_marginal
