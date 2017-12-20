@@ -45,12 +45,14 @@ p.factor_risk_total()
 
 The following methods are currently available:
 
-**Portfolio-level**:
+**Portfolio-level**
+
 | # | Name | Method | Level |
 | :---: | :--- | :--- | :--- |
 |1| Total Factor Risk | factor_risk_total | Portfolio |
 |2| Total Specific Risk | specific_risk_total | Portfolio |
 |3| Total Risk | total_risk_total | Portfolio |
+
 **Stock-level**
 | # | Name | Method | Level |
 | :---: | :--- | :--- | :--- |
