@@ -44,7 +44,7 @@ p.factor_risk_total()
 The following methods are currently available:
 
 | # | Name | Method | Level | Definition |
-| :---: | :--- | :--- | :---  |
+| :---: | :--- | :--- | :--- | :---  |
 |1| Total Factor Risk | factor_risk_total | Portfolio | Factor risk of the portfolio|
 |2| Total Specific Risk | specific_risk_total | Portfolio | Specific risk of the portfolio|
 |3| Total Risk | total_risk_total | Portfolio | Total risk of the portfolio|
