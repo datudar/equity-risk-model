@@ -1,24 +1,24 @@
 ## Equity Risk Model
 
-This is a fundamentally-based equity risk model that performs a three-factor risk decomposition and single-stock risk attribution. It is meant for instructional purposes only and should not be used to model the risk of your portfolio.
+This is a fundamentally-based equity risk model that performs a three-factor risk decomposition and single-stock risk attribution. This model is purely for instructional purposes only so you should not use it to calculate the risk of your portfolio.
 
 ### How It Works
 
-As an instructional tool and to simplify the calculations, we assume there are only ten securities in our universe: AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM. For the United States market, a more realistic universe would typically consist of thousands of stocks.
+As an instructional tool and to simplify the calculations, we assume there are only ten securities in our universe: AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM. Note: For the United States market, a more realistic universe would typically consist of thousands of stocks.
 
-The weights of your portfolio and benchmark are set in their respective CSV files. Then, assign the portfolio, benchmark, and active portfolios as follows:
+First, enter the weights of your portfolio and benchmark in their respective CSV files. Then, assign the portfolio, benchmark, and active portfolios as follows:
 
-'''
+```
 p = RiskModel(port)
 b = RiskModel(bench)
 a = RiskModel(active)
-'''
+```
 
-All risk calculations are methods that you can call as follows:
+To calculate the total portfolio factor risk, you call its method:
 
-'''
-a.factor_risk_total()
-'''
+```
+p.factor_risk_total()
+```
 
 ### Risk Model
 
