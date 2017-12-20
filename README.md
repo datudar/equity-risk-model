@@ -41,7 +41,11 @@ To return a risk calculation, you call its respective method. For example, the t
 p.factor_risk_total()
 ```
 
-The following methods are currently available at the portfolio level:
+### Risk Metrics
+
+The following metrics are currently available:
+
+**Portfolio** level:
 
 | # | Name | Method | Level | Definition |
 | :---: | :--- | :--- | :--- | :--- |
@@ -49,7 +53,7 @@ The following methods are currently available at the portfolio level:
 |2| Total Specific Risk | specific_risk_total | Portfolio | Specific risk of the portfolio|
 |3| Total Risk | total_risk_total | Portfolio | Total risk of the portfolio|
 
-The following methods are currently available at the stock level:
+**Stock** level:
 
 | # | Name | Method | Level | Definition |
 | :---: | :--- | :--- | :--- | :--- |
@@ -63,13 +67,13 @@ The following methods are currently available at the stock level:
 |8| Percent Contribution to Specific Risk | specific_risk_pct_contrib | Stock | Percent contribution to specific risk|
 |9| Percent Contribution to Total Risk | total_risk_pct_contrib | Stock | Percent contribution to total risk|
 
-**Stock-level Risk Metrics**
-- factor_risk_marginal, specific_risk_marginal, total_risk_marginal
-- factor_risk_contrib, specific_risk_contrib, total_risk_contrib
-- factor_risk_pct_contrib, specific_risk_pct_contrib, total_risk_pct_contrib
+**Factor** level:
 
-**Factor-level Risk Metrics**
-- factor_decomp_marginal, factor_decomp_contrib, factor_decomp_pct_contrib
+| # | Name | Method | Level | Definition |
+| :---: | :--- | :--- | :--- | :--- |
+|1| Marginal Factor Risk | factor_decomp_marginal | Factor | Marginal factor risk|
+|2| Contribution to Factor Risk | factor_decomp_contrib | Factor | Contribution to factor risk|
+|3| Percent Contribution to Factor Risk | factor_decomp_pct_contrib | Factor | Percent contribution to factor risk|
 
 ### License
 
