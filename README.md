@@ -54,9 +54,9 @@ These measures are available as methods on the portfolio, benchmark, and active 
 
 | # | Method | Level | Definition |
 | :---: | :--- | :--- | :--- |
-|1| factor_risk_marginal | Stock | Marginal factor risk | 
-|2| specific_risk_marginal | Stock | Marginal specific risk | 
-|3| total_risk_marginal | Stock | Marginal total risk | 
+|1| factor_risk_marginal | Stock | Marginal contribution to factor risk | 
+|2| specific_risk_marginal | Stock | Marginal contribution to specific risk | 
+|3| total_risk_marginal | Stock | Marginal contribution to total risk | 
 |4| factor_risk_contrib | Stock | Contribution to factor risk | 
 |5| specific_risk_contrib | Stock | Contribution to specific risk | 
 |6| total_risk_contrib | Stock | Contribution to total risk | 
@@ -68,9 +68,9 @@ These measures are available as methods on the portfolio, benchmark, and active 
 
 | # | Method | Level | Definition |
 | :---: | :--- | :--- | :--- |
-|1| factor_decomp_marginal | Factor | Marginal factor risk |
-|2| factor_decomp_contrib | Factor | Contribution to factor risk | 
-|3| factor_decomp_pct_contrib | Factor | Percent contribution to factor risk | 
+|1| factor_decomp_marginal | Factor | Marginal contribution to risk |
+|2| factor_decomp_contrib | Factor | Contribution to risk | 
+|3| factor_decomp_pct_contrib | Factor | Percent contribution to risk | 
 
 ### License
 
