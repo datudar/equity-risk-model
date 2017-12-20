@@ -47,13 +47,13 @@ The following methods are currently available:
 
 **Portfolio-level**:
 | # | Name | Method | Level |
-| :---: | :--- | :--- | :--- | :--- |
+| :---: | :--- | :--- | :--- |
 |1| Total Factor Risk | factor_risk_total | Portfolio |
 |2| Total Specific Risk | specific_risk_total | Portfolio |
 |3| Total Risk | total_risk_total | Portfolio |
 **Stock-level**
 | # | Name | Method | Level |
-| :---: | :--- | :--- | :--- | :--- |
+| :---: | :--- | :--- | :--- |
 |1| Marginal Factor Risk | factor_risk_marginal | Stock |
 |2| Marginal Specific Risk | specific_risk_marginal | Stock |
 |3| Marginal Total Risk | total_risk_marginal | Stock |
@@ -65,7 +65,7 @@ The following methods are currently available:
 |9| Percent Contribution to Total Risk | total_risk_pct_contrib | Stock |
 **Factor-level**
 | # | Name | Method | Level |
-| :---: | :--- | :--- | :--- | :--- |
+| :---: | :--- | :--- | :--- |
 |1| Marginal Factor Risk | factor_decomp_marginal | Factor |
 |2| Contribution to Factor Risk | factor_decomp_contrib | Factor |
 |3| Percent Contribution to Factor Risk | factor_decomp_pct_contrib | Factor |
