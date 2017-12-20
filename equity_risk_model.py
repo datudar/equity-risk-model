@@ -77,9 +77,9 @@ class RiskModel():
 # Data import
 #==============================================================================
 
-port = pd.read_csv(PORT_FILE, index_col='TICKER', header=0) # Portfolio
-bench = pd.read_csv(BENCH_FILE, index_col='TICKER', header=0) # Benchmark
-active = port - bench # Active portfolio
+portfolio = pd.read_csv(PORT_FILE, index_col='TICKER', header=0) # Portfolio
+benchmark = pd.read_csv(BENCH_FILE, index_col='TICKER', header=0) # Benchmark
+active = portfolio - benchmark # Active portfolio
 
 wgt = pd.read_csv(UNV_FILE, header=0, index_col='DATE', parse_dates=['DATE'])
 pri = pd.read_csv(PRI_FILE, header=0, index_col='DATE', parse_dates=['DATE'])

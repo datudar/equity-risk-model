@@ -16,12 +16,12 @@ The three factors in this model are:
 
 1. Enter the weights of your portfolio and benchmark in their respective CSV files.
 2. Run the [risk model](/equity_risk_model.py)
-3. Assign the portfolio, benchmark, and active portfolios as **RiskModel** objects:
+3. Assign the **portfolio**, **benchmark**, and **active** portfolios as **RiskModel** objects, p, b, and a, respectively:
 ```
-p = RiskModel(port)
+p = RiskModel(portfolio)
 ```
 ```
-b = RiskModel(bench)
+b = RiskModel(benchmark)
 ```
 ```
 a = RiskModel(active)
