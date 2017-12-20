@@ -43,37 +43,32 @@ p.factor_risk_total()
 
 ### Risk Metrics
 
-The following metrics are currently available:
+The following methods are currently available:
 
-**Portfolio** level:
-
-| # | Name | Method | Level | Definition |
+**Portfolio-level**:
+| # | Name | Method | Level |
 | :---: | :--- | :--- | :--- | :--- |
-|1| Total Factor Risk | factor_risk_total | Portfolio | Factor risk of the portfolio|
-|2| Total Specific Risk | specific_risk_total | Portfolio | Specific risk of the portfolio|
-|3| Total Risk | total_risk_total | Portfolio | Total risk of the portfolio|
-
-**Stock** level:
-
-| # | Name | Method | Level | Definition |
+|1| Total Factor Risk | factor_risk_total | Portfolio |
+|2| Total Specific Risk | specific_risk_total | Portfolio |
+|3| Total Risk | total_risk_total | Portfolio |
+**Stock-level**
+| # | Name | Method | Level |
 | :---: | :--- | :--- | :--- | :--- |
-|1| Marginal Factor Risk | factor_risk_marginal | Stock | Marginal factor risk|
-|2| Marginal Specific Risk | specific_risk_marginal | Stock | Marginal specific risk|
-|3| Marginal Total Risk | total_risk_marginal | Stock | Marginal total risk|
-|4| Contribution to Factor Risk | factor_risk_contrib | Stock | Contribution to factor risk|
-|5| Contribution to Specific Risk | specific_risk_contrib | Stock | Contribution to specific risk|
-|6| Contribution to Total Risk | total_risk_contrib | Stock | Contribution to total risk|
-|7| Percent Contribution to Factor Risk | factor_risk_pct_contrib | Stock | Percent contribution to factor risk|
-|8| Percent Contribution to Specific Risk | specific_risk_pct_contrib | Stock | Percent contribution to specific risk|
-|9| Percent Contribution to Total Risk | total_risk_pct_contrib | Stock | Percent contribution to total risk|
-
-**Factor** level:
-
-| # | Name | Method | Level | Definition |
+|1| Marginal Factor Risk | factor_risk_marginal | Stock |
+|2| Marginal Specific Risk | specific_risk_marginal | Stock |
+|3| Marginal Total Risk | total_risk_marginal | Stock |
+|4| Contribution to Factor Risk | factor_risk_contrib | Stock |
+|5| Contribution to Specific Risk | specific_risk_contrib | Stock |
+|6| Contribution to Total Risk | total_risk_contrib | Stock |
+|7| Percent Contribution to Factor Risk | factor_risk_pct_contrib | Stock |
+|8| Percent Contribution to Specific Risk | specific_risk_pct_contrib | Stock |
+|9| Percent Contribution to Total Risk | total_risk_pct_contrib | Stock |
+**Factor-level**
+| # | Name | Method | Level |
 | :---: | :--- | :--- | :--- | :--- |
-|1| Marginal Factor Risk | factor_decomp_marginal | Factor | Marginal factor risk|
-|2| Contribution to Factor Risk | factor_decomp_contrib | Factor | Contribution to factor risk|
-|3| Percent Contribution to Factor Risk | factor_decomp_pct_contrib | Factor | Percent contribution to factor risk|
+|1| Marginal Factor Risk | factor_decomp_marginal | Factor |
+|2| Contribution to Factor Risk | factor_decomp_contrib | Factor |
+|3| Percent Contribution to Factor Risk | factor_decomp_pct_contrib | Factor |
 
 ### License
 
