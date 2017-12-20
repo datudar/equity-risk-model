@@ -2,7 +2,7 @@
 
 This is a fundamentally-based [equity risk model](/equity_risk_model.py) that performs factor risk decomposition and single stock risk attribution. 
 
-We assume that only three risk factors (Size, Value, Momentum) are relevant and that only ten securities (AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM) are in our universe .
+We assume that only three risk factors&mdash;Size, Value, Momentum&mdash;are relevant and that only ten securities&mdash;AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM&mdash;are in our universe .
 
 *Note: This model is a drastic oversimplification of equity risk and is intended purely for instructional purposes only. For the United States market, a more realistic model would typically include several more risk factors and thousands of securities.*
 
