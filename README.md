@@ -14,9 +14,9 @@ The three factors in this model are:
 
 ### How It Works
 
-1. Enter the weights of the portfolio and benchmark in their respective CSV files.
-2. Run the [equity risk model](/equity_risk_model.py).
-3. Assign the **portfolio**, **benchmark**, and **active** portfolios as **RiskModel** objects, **p**, **b**, and **a**, respectively:
+1. Enter the weights of the portfolio and benchmark in their respective CSV files
+2. Run the [equity risk model](/equity_risk_model.py)
+3. Assign the **portfolio**, **benchmark**, and **active** portfolios as RiskModel objects, **p**, **b**, and **a**, respectively:
 ```
 p = RiskModel(portfolio)
 ```
@@ -72,7 +72,7 @@ The following methods are currently available:
 | # | Method | Level | Definition |
 | :---: | :--- | :--- | :--- |
 |1| factor_decomp_marginal | Factor | Marginal factor risk |
-|2| factor_decomp_contrib | Factor | Contribution to factor Risk | 
+|2| factor_decomp_contrib | Factor | Contribution to factor risk | 
 |3| factor_decomp_pct_contrib | Factor | Percent contribution to factor risk | 
 
 ### License
