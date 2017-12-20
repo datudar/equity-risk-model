@@ -19,7 +19,11 @@ The three factors in this model are:
 3. Assign the portfolio, benchmark, and active portfolios as **RiskModel** objects:
 ```
 p = RiskModel(port)
+```
+```
 b = RiskModel(bench)
+```
+```
 a = RiskModel(active)
 ```
 
