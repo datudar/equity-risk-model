@@ -39,15 +39,15 @@ p.factor_risk_total()
 
 These are all the methods that are currently available:
 
-#### Portfolio-level
+##### Portfolio-level
 - factor_risk_total, specific_risk_total, total_risk_total
 
-#### Stock-level
+##### Stock-level
 - factor_risk_marginal, specific_risk_marginal, total_risk_marginal
 - factor_risk_contrib, specific_risk_contrib, total_risk_contrib
 - factor_risk_pct_contrib, specific_risk_pct_contrib, total_risk_pct_contrib
 
-#### Factor-level
+##### Factor-level
 - factor_decomp_marginal, factor_decomp_contrib, factor_decomp_pct_contrib
 
 ### License
