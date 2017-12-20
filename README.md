@@ -1,14 +1,14 @@
 ## Equity Risk Model
 
-This is a fundamentally-based equity risk model that performs a three-factor risk decomposition and single-stock risk attribution. 
+This is a fundamentally-based equity risk model that performs factor risk decomposition and single-stock risk attribution. 
 
 ### Risk Model
 
-As an instructional tool and to simplify the calculations, we assume there are only ten securities in our universe: AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM. 
+As an instructional tool and to simplify the calculations, we assume that only three risk factors are relevant (size, value, momentum) and that there are only ten securities in our universe (AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM).
 
-Note: This model is purely for instructional purposes only. For the United States market, a more realistic universe would typically consist of thousands of securities.
+*Note: This model is purely for instructional purposes only. For the United States market, a more realistic model would include a few more factors and thousands of securities.*
 
-The three factors in this risk model are size, value, and momentum, and they are defined as follows:
+The three factors in this model are defined as follows:
 
 1. **Size** is defined as the natural log of the market cap
 2. **Value** is defined as the trailing 12-month earnings yield
@@ -16,7 +16,7 @@ The three factors in this risk model are size, value, and momentum, and they are
 
 ### How It Works
 
-First, enter the weights of your portfolio and benchmark in their respective CSV files. Then, assign the portfolio, benchmark, and active portfolios as RiskModel objects:
+First, enter the weights of your portfolio and benchmark in their respective CSV files. Then, assign the portfolio, benchmark, and active portfolios as **RiskModel** objects:
 
 ```
 p = RiskModel(port)
@@ -33,6 +33,7 @@ The total risk of a portfolio, benchmark, or active portfolio is defined as the 
 3. Percent contribution to risk
 
 To return a risk calculation, you have to call its method. For example, the total factor risk of the portfolio, p, is called as:
+
 ```
 p.factor_risk_total()
 ```
