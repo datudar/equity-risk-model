@@ -32,29 +32,23 @@ The total risk of a portfolio, benchmark, or active portfolio is defined as the 
 2. Contribution to risk
 3. Percent contribution to risk
 
-To return a risk calculation, you have to call its method.
-
-For example, the total factor risk of the portfolio, p, is called as:
+To return a risk calculation, you have to call its method. For example, the total factor risk of the portfolio, p, is called as:
 ```
 p.factor_risk_total()
 ```
 
 These are all the methods that are currently available:
-- factor_risk_total
-- specific_risk_total
-- total_risk_total
-- factor_risk_marginal
-- specific_risk_marginal
-- total_risk_marginal
-- factor_risk_contrib
-- specific_risk_contrib
-- total_risk_contrib
-- factor_risk_pct_contrib
-- specific_risk_pct_contrib
-- total_risk_pct_contrib
-- factor_decomp_marginal
-- factor_decomp_contrib
-- factor_decomp_pct_contrib
+
+#### Portfolio-level:
+- factor_risk_total, specific_risk_total, total_risk_total
+
+#### Stock-level:
+- factor_risk_marginal, specific_risk_marginal, total_risk_marginal
+- factor_risk_contrib, specific_risk_contrib, total_risk_contrib
+- factor_risk_pct_contrib, specific_risk_pct_contrib, total_risk_pct_contrib
+
+#### Factor-level:
+- factor_decomp_marginal, factor_decomp_contrib, factor_decomp_pct_contrib
 
 ### License
 
