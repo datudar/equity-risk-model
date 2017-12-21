@@ -1,8 +1,6 @@
 ## Equity Risk Model
 
-This is a fundamentally-based [equity risk model](/equity_risk_model.py) that performs factor risk decomposition and single stock risk attribution. 
-
-We assume that only three risk factors&mdash;Size, Value, Momentum&mdash;are relevant and that only ten securities&mdash;AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM&mdash;are in our universe .
+This is a fundamentally-based [equity risk model](/equity_risk_model.py) that performs factor risk decomposition and single stock risk attribution. The model assumes that only three risk factors&mdash;Size, Value, Momentum&mdash;are relevant and that only ten securities&mdash;AAPL, BA, CAT, DIS, EBAY, F, GOOGL, HOG, IBM, JPM&mdash;are in our universe.
 
 *Note: This model is a drastic oversimplification of equity risk and is intended purely for instructional purposes only. For the United States market, a more realistic model would typically include several more risk factors and thousands of securities.*
 
@@ -26,7 +24,7 @@ b = RiskModel(benchmark)
 ```
 a = RiskModel(active)
 ```
-4. Calculate a risk measure by executing that portfolio's respective method. For example, the total factor risk of the active portfolio, **a**, is called as:
+4. Calculate a risk measure by executing its repsective method. For example, the total factor risk of the active portfolio, **a**, is called as:
 
 ```
 a.factor_risk_total()
@@ -34,13 +32,13 @@ a.factor_risk_total()
 
 ### Risk Analysis
 
-The total risk is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the stock-level and factor-level. And, for each level, we calculate the following three risk measures:
+For the portfolio, benchmark, and active portfolios, the total risk is defined as the square root of the sum of the squared factor risk and squared specific risk. Risk is further decomposed at both the stock-level and factor-level. And, for each level, we calculate the following three risk measures:
 
 - Marginal contribution to risk
 - Contribution to risk
 - Percent contribution to risk
 
-These measures are available as methods on the portfolio, benchmark, and active portfolios.
+These measures are available as the following methods:
 
 **Portfolio-level**
 
