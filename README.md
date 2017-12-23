@@ -24,7 +24,7 @@ b = RiskModel(benchmark)
 ```
 a = RiskModel(active)
 ```
-4. Calculate a risk measure by executing its repsective method. For example, the total factor risk of the active portfolio, **a**, is called as:
+4. Calculate a risk measure by executing its method. For example, to calculate the total factor risk of the active portfolio, **a**, execute the following line:
 
 ```
 a.factor_risk_total()
